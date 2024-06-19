@@ -557,6 +557,10 @@ function register_taxonomy( $taxonomy, $object_type, $args = array() ) {
 			}
 		}
 	}
+	else {
+	    // Delete the term otherwise
+	    delete_option( 'default_term_' . $taxonomy_object->name );
+	}
 
 	/**
 	 * Fires after a taxonomy is registered.
